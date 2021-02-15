@@ -20,10 +20,17 @@ var dfs = function(grid, row, col) {
     grid[row][col] = '0';
 
     for (let i = 0; i < steps.length; ++i) {
-            let r = row + steps[i][0];
-            let c = col + steps[i][1];
+      let r = row + steps[i][0];
+      let c = col + steps[i][1];
 
-            if (r < 0 || r === grid.length || c < 0 || c === grid[0].length || grid[r][c] === '0') continue;
-            dfs(grid, r, c);
+      if (
+        r < 0 ||
+        r === grid.length ||
+        c < 0 ||
+        c === grid[0].length ||
+        grid[r][c] === "0"
+      )
+        continue;
+      dfs(grid, r, c);
     }
 }
